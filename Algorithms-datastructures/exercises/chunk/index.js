@@ -16,23 +16,43 @@ function chunk(array, size) {
 //retrieve the last element in superarray
 //if element doesnt exist or its length is equal to chunk size
 //push new subarray into superarray with current element
-//else push current element into subarray
-  const superarr = [];
+//else push current element into subarrays
 
+  // const superarr = [];
+  //
+  //
+  // for(let element of array){
+  //   const last = superarr[superarr.length -1];
+  //
+  //   if(!last || last.length === size){
+  //     superarr.push([element]);
+  //   }
+  //   else{
+  //     last.push(element);
+  //   }
+  //
+  // }
+  //
+  // return superarr;
 
-  for(let element of array){
-    const last = superarr[superarr.length -1];
+//Solution 2
+// create empty superarray
+// create index at 0
+// while index  less than array.length
+// -> push slice of length size from array into superarray
+// -> add size to index
+  const superarray = [];
+  let index = 0;
 
-    if(!last || last.length === size){
-      superarr.push([element]);
-    }
-    else{
-      last.push(element);
-    }
+  // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
+  while(index < array.length){
+    superarray.push(array.slice(index,index + size));
+    index += size;
   }
 
-  return superarr;
+  return superarray;
+
 
 
 

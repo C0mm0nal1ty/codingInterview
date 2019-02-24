@@ -10,44 +10,22 @@
 
 function anagrams(stringA, stringB) {
   //Solution 1
-  //  save the given strings as lowercase versions
-  let charmapA = {};
-  let charmapB = {};
-  const str1 = stringA.toLowerCase();
-  const str2 = stringB.toLowerCase();
-
-
   //  map all the characters given in each string to an object, and avoid spaces, or special characters using regular expressions
   //check each letter is an alphabet with a regex
-  function charalpha(str) {
-    let letters = /^[a-z]+$/;
+  //change string to lowercase
+  function buildCharMap(str){
+    const charMap = {};
 
-    if (str.match(letters)) {
-      return true;
+    //replace any nonword character
+    for(let char of str.replace(/[^\w]/g, '').toLowerCase()){
+      charMap[char] = charMap[char] + 1 || 1;
     }
+
+    return charMap;
   }
 
-  
-
-  for (let char of str1) {
-    if (charalpha(char)) {
-      if (charmapA[char]) {
-        charmapA[char]++;
-      } else {
-        charmapA[char] = 1;
-      }
-    }
-  }
-
-  for (let char of str2) {
-    if (charalpha(char)) {
-      if (charmapB[char]) {
-        charmapB[char]++;
-      } else {
-        charmapB[char] = 1;
-      }
-    }
-  }
+  let charmapA = buildCharMap(stringA);
+  let charmapB = buildCharMap(stringB);
 
   //  check to see that the total sum of values in one string is equal to the sum in the other string.
 
@@ -79,9 +57,7 @@ function anagrams(stringA, stringB) {
       }
     }
   }
-  if(stringA == "hello"){
-    console.log("current count" + count);
-  }
+
 
   //check that the count is equal to the sum of string A
   // stringB is equal to string B so doesn't need to be checked
@@ -95,11 +71,34 @@ function anagrams(stringA, stringB) {
 module.exports = anagrams;
 
 //Solution 2
+/*
+function anagrams(stringA, stringB){
+  const aCharMap = buildCharMap(stringA);
+  const bCharMap = buildCharMap(stringB);
 
+  if(Object.keys(aCharMap).length !== bCharMap[char]){
+    return false;
+  }
 
+  for(let char in aCharMap) {
+    if(aCharMap[char] !== bCharMap[char]){
+      return false;
+    }
+  }
+}
 
+function buildCharMap(str){
+  const charMap = {};
 
+  //replace any nonword character
+  for(let char of str.replace(/[^\w]/g, '').toLowerCase()){
+    charMap[char] = charMap[char] + 1 || 1;
+  }
 
+  return charMap;
+}
+
+*/
 
 
 

@@ -22,3 +22,37 @@ return capitalstr.join(' ');
 }
 
 module.exports = capitalize;
+
+
+//Solution 2
+/*
+const words = [];
+
+for (let word of str.split(' ')) {
+  words.push(word[0].toUpperCase() + word.slice(1))
+}
+
+return words.join(' ');
+
+*/
+
+//Solution3
+/*
+create an empty string called 'result'
+for each char in string.
+if char left has a space, capitalize it
+else add it to result
+
+let result = str[0].toUpperCase();
+
+for(let i = 1; i < str.length; i++){
+  if(str.charAt(i - 1) == ' '){
+      result = result + str[i].toUpperCase();
+  }
+  else{
+    result = result + str[i];
+  }
+}
+
+return result;
+*/

@@ -12,13 +12,13 @@ function capitalize(str) {
   //capitalize the first character
   //combine the array back into a string
 
-  const words = [];
+    let capitalstr = str.toLowerCase().split(' ');
 
-  for (let word of str.split(' ')) {
-    words.push(word[0].toUpperCase() + word.slice(1))
-  }
+    for(let i = 0; i < capitalstr.length; i++){
+      capitalstr[i] = capitalstr[i].charAt(0).toUpperCase() + capitalstr[i].substring(1);
+    }
 
-  return words.join(' ');
+    return capitalstr.join(' ');
 }
 
 module.exports = capitalize;

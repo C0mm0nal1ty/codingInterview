@@ -12,6 +12,13 @@ function capitalize(str) {
 //capitalize the first character
 //combine the array back into a string
 
+  let capitalstr = str.toLowerCase().split(' ');
+
+  for(let i = 0; i < capitalstr.length; i++){
+    capitalstr[i] = capitalstr[i].charAt(0).toUpperCase() + capitalstr[i].substring(1);
+  }
+
+return   capitalstr.join(' ');
 }
 
 module.exports = capitalize;

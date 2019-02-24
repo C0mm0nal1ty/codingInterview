@@ -69,3 +69,51 @@ function anagrams(stringA, stringB) {
 }
 
 module.exports = anagrams;
+
+//Solution 2
+/*
+function anagrams(stringA, stringB){
+  const aCharMap = buildCharMap(stringA);
+  const bCharMap = buildCharMap(stringB);
+
+  if(Object.keys(aCharMap).length !== bCharMap[char]){
+    return false;
+  }
+
+  for(let char in aCharMap) {
+    if(aCharMap[char] !== bCharMap[char]){
+      return false;
+    }
+  }
+}
+
+function buildCharMap(str){
+  const charMap = {};
+
+  //replace any nonword character
+  for(let char of str.replace(/[^\w]/g, '').toLowerCase()){
+    charMap[char] = charMap[char] + 1 || 1;
+  }
+
+  return charMap;
+}
+
+*/
+
+/*
+//Solution 3
+//use an array to solve this one
+return cleanString(stringA) === cleanString(stringB);
+
+}
+
+function cleanString(str){
+  return str.replace(/[^\w]/g,'').toLowerCase()
+  .split('').sort().join('');
+}
+
+*/
+
+
+
+//EOL

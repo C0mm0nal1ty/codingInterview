@@ -14,31 +14,6 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {
-
-
-  for(let row = 0; row < n; row++){
-    let level = '';
-    for(let column = 0; column < n; column++){
-      if(column <= row){
-        if(column == 0){
-          level += "#";
-        }else{
-          level = "#" + level + '#';
-        }
-      }
-      else{
-        level = ' ' + level + ' ';
-      }
-
-    }
-    console.log(level);
-  }
-
-}
-
-module.exports = pyramid;
-//algorithm psuedocode
 //for 0 to n rows
 // create string levels
 //from 0 to columns
@@ -47,6 +22,29 @@ module.exports = pyramid;
 //else
 //--> add a space to level
 //console log stair
+function pyramid(n) {
+
+  const midpoint = Math.florr((2*n-1)/2);
+  for(let row = 0; row < n; row++){
+    let level = '';
+
+    for(let column = 0; column < 2 * n -1; column++){
+      if(midpoint - row <= column && midpoint + row >= column){
+        level += '#';
+      }
+      else{
+        level += ' ';
+      }
+    }
+
+    console.log(level);
+  }
+
+}
+
+module.exports = pyramid;
+//algorithm psuedocode
+
 
 
 //EOF

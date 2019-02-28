@@ -1,3 +1,5 @@
+//SECTION FOR NOTES
+
 // --- Directions
 // Write a function that accepts a positive number N.
 // The function should console log a pyramid shape
@@ -15,12 +17,11 @@
 //       '#####'
 
 function pyramid(n) {
-//solution 3
 //n = 3
 //row = 1
 //column = 3 ,0-5
 //midpoint = 2
-//level = ''
+//level = ' ### '
   const midpoint = Math.floor((2*n-1)/2);
   for(let row = 0; row < n; row++){
     let level = '';

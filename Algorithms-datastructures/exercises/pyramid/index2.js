@@ -15,24 +15,23 @@
 //       '#####'
 
 function pyramid(n) {
-//n = 3
-//row = 1
-//column = 3 ,0-5
-//midpoint = 2
-//level = ' ### '
-  const midpoint = Math.floor((2*n-1)/2);
+
+
   for(let row = 0; row < n; row++){
     let level = '';
-
-    for(let column = 0; column < 2 * n -1; column++){
-      if(midpoint - row <= column && midpoint + row >= column){
-        level += '#';
+    for(let column = 0; column < n; column++){
+      if(column <= row){
+        if(column == 0){
+          level += "#";
+        }else{
+          level = "#" + level + '#';
+        }
       }
       else{
-        level += ' ';
+        level = ' ' + level + ' ';
       }
-    }
 
+    }
     console.log(level);
   }
 

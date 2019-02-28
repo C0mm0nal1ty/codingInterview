@@ -17,28 +17,20 @@
 //       '### '
 //       '####'
 
-function steps(n,row = 0, stair = ''){
-  if(n === row){
-    return;
-  }
+function steps(n){
 
-  if(n == stair.length){
+  for(let row = 0; row < n; row++){
+    let stair = '';
+    for(let column = 0; column < n; column++){
+      if(column <= row){
+        stair += '#';
+      }
+      else{
+        stair += ' ';
+      }
+    }
     console.log(stair);
-    return steps(n,row +1);
   }
-
-  if(stair.length <= row){
-    stair += '#';
-  }
-  else{
-    stair+= ' ';
-  }
-  steps(n,row,stair);
-//n = 3
-//row = 1
-//stair.length = 0
-//stair = '##'
-
 
 }
 
@@ -46,12 +38,14 @@ module.exports = steps;
 //EOF
 
 //psuedocode algorithm
-//using recursion
-//if row === n, hit end of our problem
-/*
-if stair string length === n, then we are at the end of the row
-if length of stair string <= row number, were working on.
-add an '#' otherwise add ' '
-*/
+//from 0 to n
+//create empty string stair
+//from 0 to n
+//if current column is equal to/les sthan current row
+//add a #
+//else
+// add a space
+//consolelog stair
+
 
 //

@@ -24,7 +24,7 @@
 //console log stair
 function pyramid(n) {
 
-  const midpoint = Math.florr((2*n-1)/2);
+  const midpoint = Math.floor((2*n-1)/2);
   for(let row = 0; row < n; row++){
     let level = '';
 

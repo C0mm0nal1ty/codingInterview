@@ -8,18 +8,27 @@
 // forms the first ten entries of the fibonacci series.
 // Example:
 //   fib(4) === 3
-//time complexity is O(2^N), due to 2 operations at each level of the tree.
-//space complexity is O(N), due to depth of the tree
+//time complexity is O(N) + O(N) = O(N)
+//space complexity is O(1)
 
 
 function fib(n) {
-  if(n < 2){
+  let last2 = 0;
+  let last1 = 1;
+  let current = 0;
+  if(n <=1){
     return n;
   }
-  else{
-    return fib(n -1) + fib(n-2);
-  }
+  // if(n == 2){
+  //   return 1;
+  // }
+  for(let i = 2; i <= n;i++){
+      current = last2 + last1;
+      last2 = last1;
+      last1 = current;
+    }
 
+  return current;
 }
 
 module.exports = fib;

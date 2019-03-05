@@ -24,3 +24,9 @@ module.exports = matrix;
 
 //EOF
 /*
+Pseudocode
+create an empty superarray called results
+create counter variable,set to 1
+loo(startcol <= endcol and startrow <= endrow)
+
+*/

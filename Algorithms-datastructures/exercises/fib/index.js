@@ -9,8 +9,7 @@
 // Example:
 //   fib(4) === 3
 //time complexity is O(N) + O(N) = O(N)
-//space complexity is O(1)
-
+//space complexity is O(C)
 
 function fib(n) {
   const result = [0, 1];
